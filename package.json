@@ -1,6 +1,6 @@
 {
   "name": "js-mentoring-program",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Repository for learning tasks",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,9 @@
   },
   "authors": [
     "Dzmitry_Shaplyka@epam.com",
-    "Oleksandr_Halichenko@epam.com"
+    "Oleksandr_Halichenko@epam.com",
+    "Aksana_Zanko@epam.com",
+    "Zanko_zanko"
   ],
   "license": "ISC",
   "dependencies": {
