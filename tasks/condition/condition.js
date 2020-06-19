@@ -7,11 +7,12 @@
   const a = 3,
         b = 2;
 
-  if (a + b < 4) {
-    console.log('wrong');
+ /*if (a + b < 4) {
+   console.log('wrong');
   } else {
-    console.log('too much');
-  }
+   console.log('too much');
+  }*/
+ (a + b < 4) ? console.log('wrong') : console.log('too much');
 }
 
 /** TODO
@@ -23,6 +24,16 @@
 {
     const x = 3;
     const y = 7;
+    let z;
+    if(x<10 || y<10) {
+      z= x+y;
+    } else {;
+      z=x*y;
+    }
+    console.log(z);
+    (x<10 || y<10) ?  z= x+y :  z=x*y;
+    console.log(z);
+
 }
 
 /** TODO
@@ -35,4 +46,20 @@
     const x = 3;
     const y = 7;
     const operator = "add";
+    switch (true){
+      case operator == 'add':
+        console.log('add');
+        break;
+      case operator == 'subtract':
+        console.log('subtract');
+        break;
+      case operator == 'multiply':
+        console.log('multiply');
+        break; 
+      case operator == 'divide':
+        console.log('divide');
+        break; 
+      default:
+        console.log('Zanko');
+    }
 }
