@@ -22,9 +22,7 @@ function calculateDiscount(redemption) {
       discount = 30;
     } else if (redemption > 2700 || redemption <= 6500) {
       discount = 45;
-    } else {
-      discount = 0;
-    }
+    } 
   }
   return discount;
 }
