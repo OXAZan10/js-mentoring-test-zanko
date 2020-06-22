@@ -13,17 +13,15 @@
 function calculateDiscount(redemption) {
   let discount;
 
-  while (redemption >= 0 || redemption <= 9999) {
-    if (redemption >= 0 || redemption <= 350) {
+    if (redemption >= 0 && redemption <= 350) {
       discount = 0;
-    } else if (redemption > 350 || redemption <= 1350) {
+    } else if (redemption > 350 && redemption <= 1350) {
       discount = 15;
-    } else if (redemption > 1350 || redemption <= 2700) {
+    } else if (redemption > 1350 && redemption <= 2700) {
       discount = 30;
-    } else if (redemption > 2700 || redemption <= 6500) {
+    } else if (redemption > 2700 && redemption <= 6500) {
       discount = 45;
     } 
-  }
   return discount;
 }
 
@@ -64,7 +62,7 @@ function calculateDiscount(redemption) {
  */
 {
   const substr = ["I", " love", " JS"];
-  let result = [];
+  let result = '';
   for (let i = 0; i < substr.length; i++) {
     result += substr[i]
   }

@@ -48,18 +48,18 @@
     const operator = "add";
     switch (true){
       case operator == 'add':
-        console.log('add');
+        console.log(x-y);
         break;
       case operator == 'subtract':
-        console.log('subtract');
+        console.log(x+y);
         break;
       case operator == 'multiply':
-        console.log('multiply');
+        console.log(x*y);
         break; 
       case operator == 'divide':
-        console.log('divide');
+        console.log(x/y);
         break; 
       default:
-        console.log('Zanko');
+        console.log(y/x);
     }
 }
