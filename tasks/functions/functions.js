@@ -25,12 +25,8 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-	if (n%2==1) {
-		return true;
-	}
-	else {
-		return false;
-	}
+	return n%2==1;
+
 
 }
 
@@ -39,7 +35,7 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
-	shortWord=wordArray[0]
+	let shortWord=wordArray[0];
 	for(let i=0;i<wordArray.length;i++){
 		if (wordArray[i].length<shortWord.length) {
 			shortWord=wordArray[i];
