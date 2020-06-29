@@ -105,7 +105,7 @@ function getTotalPath(path) {
 
 function discountFunction(percentage) {
 	return function(amount){
-		return (amount-amount*percentage/100)
+		return (amount-amount*percentage/100);
 	};
 
 }
@@ -130,7 +130,6 @@ const myObject = {
 	call() {
 		console.log("My name is "+ this.name +" " + this.lastName+ " and I am " + this.age +" years old. My best friend is "+ this.friends[2]);
 	}
-
 };
 myObject.call();	
 module.exports = {
