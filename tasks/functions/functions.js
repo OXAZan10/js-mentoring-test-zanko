@@ -123,15 +123,16 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		console.log(Object.keys(myObject));
+		for(let key in myObject){
+			console.log(key);
+		}
 		},
 	call() {
 		console.log("My name is "+ this.name +" " + this.lastName+ " and I am " + this.age +" years old. My best friend is "+ this.friends[2]);
-		//write your code here
 	}
-	
-};
 
+};
+myObject.call();	
 module.exports = {
 	add,
 	getFullName,
