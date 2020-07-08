@@ -1,16 +1,20 @@
+const chars = require ('./characters.json');
 /**
  * return an array of characters names
  * @param {Array} chars
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
+    return chars.map(char=> char.name); 
 }
-
 /**
  * print (console.log) ids of all characters
  * @param {Array} chars
  */
-function printCharacterNames(chars) {
+function printCharacterNames(chars) {// тесты успешно отрабатывают только в случае, если я вывожу console.log(el.name), но по заданию я должна вывести id. 
+    chars.forEach(el=>{
+        console.log(el.id)
+    })
 }
 
 /**
@@ -19,6 +23,8 @@ function printCharacterNames(chars) {
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
+    return chars.filter(char=>char.species!=="Human");
+ 
 }
 
 /**
@@ -26,7 +32,19 @@ function getNonHumanCharacters(chars) {
  * @param {Array} chars
  * @return {Object} - Jerry object
  */
-function getJerryInfo(chars) {
+function getJerryInfo(chars) { 
+    return chars.find(char=>char.name=="Jerry Smith");
+
+/*
+let jerrySmithArr= chars.filter(char=>char.name=="Jerry Smith");
+    let objectJerry= jerrySmithArr.reduce((acc, n) => {
+        acc[n.name] = n;
+        return acc;
+      }, {});
+      return objectJerry;
+*/
+
+   
 }
 
 /**
@@ -35,6 +53,9 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
+
+   return chars.every(char=>char.species=="Human");
+
 }
 
 /**
@@ -43,7 +64,17 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
+    return chars.some(char=>char.type == "Fish-Person")
+ /*   const anyFishPerson= chars.map(char=> char.type);
+    if (anyFishPerson.lastIndexOf("Fish-Person")>0){
+        return true;
+    }else{
+        return false;
+    }
+*/
+
 }
+//console.log (isAnyFishPerson(chars));
 
 /**
  * 1. Write a method to find an index of minimal item from an array;
@@ -51,7 +82,17 @@ function isAnyFishPerson(chars) {
  * @return {number} - minimum element index
  */
 function minItem(arr) {
-    //PLACE YOUR CODE HERE
+    return arr.reduce(function(accomulator,currentValue,index){
+        if (currentValue<arr[accomulator]) {
+            return index;
+        }
+
+        else{
+            return accomulator;
+        }
+        
+    },0);
+
 }
 
 module.exports = {
