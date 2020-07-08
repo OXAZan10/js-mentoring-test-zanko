@@ -23,7 +23,7 @@ function printCharacterNames(chars) {// тесты успешно отрабат
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
-    return chars.filter(char=>char.species=="Alien"||char.species=="Mytholog"||char.species=="Poopybutthole"||char.species=="unknown"||char.species=="Humanoid");
+    return chars.filter(char=>char.species!=="Human");
  
 }
 
@@ -32,14 +32,19 @@ function getNonHumanCharacters(chars) {
  * @param {Array} chars
  * @return {Object} - Jerry object
  */
-function getJerryInfo(chars) { // тесты не проходит, но я не понимаю что не так, если я отдаю все парметры ( чекала через console.log ( getJerryInfo(chars));
-    let jerrySmithArr= chars.filter(char=>char.name=="Jerry Smith");
+function getJerryInfo(chars) { 
+    return chars.find(char=>char.name=="Jerry Smith");
+
+/*
+let jerrySmithArr= chars.filter(char=>char.name=="Jerry Smith");
     let objectJerry= jerrySmithArr.reduce((acc, n) => {
         acc[n.name] = n;
         return acc;
       }, {});
       return objectJerry;
+*/
 
+   
 }
 
 /**
@@ -59,13 +64,14 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
-    //return chars.indexOf(char=>char.type=="Fish-Person");
-    const anyFishPerson= chars.map(char=> char.type);
+    return chars.some(char=>char.type == "Fish-Person")
+ /*   const anyFishPerson= chars.map(char=> char.type);
     if (anyFishPerson.lastIndexOf("Fish-Person")>0){
         return true;
     }else{
         return false;
     }
+*/
 
 }
 //console.log (isAnyFishPerson(chars));
