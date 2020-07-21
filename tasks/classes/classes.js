@@ -9,7 +9,7 @@ class Person{
         this.firstName=firstName;
         this.lastName= lastName;
     }
-    getFullName(firstName, lastName){
+    getFullName(){
         return this.firstName+ ' ' + this.lastName;
     }
 
@@ -26,7 +26,7 @@ class Student extends Person{
         super (firstName, lastName);
         this.grade=grade;
     }
-    getGrade(grade){
+    getGrade(){
         return this.grade;
     }
 
