@@ -14,3 +14,25 @@
  * Please NOTE, that you should omit the .html extension
  * Please do the task in the scope of the file. Create a pull request a share it with your mentor.
  */
+const fs = require('fs');
+
+fs.readFile('./tasks/json/test.json', 'utf-8',(err, content) => {
+    if (err) {
+        throw err;
+     }
+   //console.log(content);
+   let parsedObject = JSON.parse(content).list.entries;
+   //console.log(parsedObject);
+   let mapedObject= parsedObject.map(el=> {
+       let str='.html';
+       let deleteSubstring=el.entry.name.replace(str,'');
+       return {
+           docId: deleteSubstring
+       }
+    });
+    console.log(mapedObject)
+    fs.writeFile('./parsed.json', JSON.stringify(mapedObject, null, " "), function(err){
+        if (err) return console.log(err);  
+    })
+});
+
